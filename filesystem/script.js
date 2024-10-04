@@ -9,16 +9,19 @@ var a=10;
 */
 // to create a file by using node js 
 
-// const fs=require('fs');
-// fs.writeFile("./hello","to kaise hai aap log",function(err){
-//     if(err){
-//         console.log(err);
-//     }
-//     else{
-//         console.log("file ban chuki hai  bhaiyo");
+const fs = require("fs");
 
-//     }
-// })
+fs.writeFile("shubham.txt", "to kaise hai aap log", function(err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("file ban chuki hai bhaiyo");
+    }
+});
+
+
+
+
 
 
 //to read a file 
