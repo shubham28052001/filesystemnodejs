@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl px-6 font-bold">Note Taking App</h1>
+            <nav>
+                <a href="/new" class="px-4 text-2xl hover:underline">create new note</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+
+    <h1 class="uppercase flex justify-center mt-4 text-3xl font-bold">my notes</h1>
+    <section class="container p-4 flex flex-wrap gap-10">
+            
+            <% files.forEach(function(file){ %>
+                <div class="bg-white w-80 rounded-lg shadow-md p-4">
+                    <h1 class="font-bold text-xl">
+                
+                      <%= file.name %>
+                    </h1>
+                <p class=" text-gray-700 text-xl">
+                    June 15 2024
+                </p>
+    
+                    <a class=" text-blue-500 font-bold text-xl" 
+                    href="/show/<%=file.name%>"> 
+                        view note </a>
+                        <a class=" text-blue-500 font-bold text-xl ml-10" 
+                    href="/edit/<%=file.name%>"> 
+                        Edit </a>
+                        <a class=" text-blue-500 font-bold text-xl ml-10" 
+                    href="/delete/<%=file.name%>"> 
+                    <i class="ri-delete-bin-line"></i> </a>
+                </div>
+                <% }) %>
+
+    </section>
+</body>
+
+</html>
